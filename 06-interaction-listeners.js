@@ -10,16 +10,9 @@ browser.configure()
     .interval(1, timeUnits.SECONDS)
   .done();
 
-browser.get("http://minium.vilt.io/sample-app/");
-
-// increase loading time
-configBtn = $("#configure");
-loadingTimeFld = $("#loading-time-seconds");
-saveBtn = $("#config-save");
-
-configBtn.click();
-loadingTimeFld.fill("8");
-saveBtn.click();
+// loading operations will take 8 seconds 
+browser.get("http://minium.vilt.io/sample-app/#/folders/inbox?t=8");
+browser.navigate().refresh();
 
 loading = $(".loading").withCss("display", "block");
 
@@ -31,7 +24,8 @@ loadingUnexistenceListener = minium.interactionListeners
 
 // we now use our base expression to 'carry' that interaction listener
 base = $(":root").unless(".modal-backdrop").add(".modal-dialog")
-  .with(loadingUnexistenceListener);
+  .unless(loading) // we need to delete this filter
+  // .with(loadingUnexistenceListener);
 
 mailItemCheckbox = base.find("#mail-list :checkbox");
 removeBtn = base.find("#remove-action");
@@ -40,6 +34,12 @@ composeBtn = base.find("#compose");
 mailItemCheckbox.click();
 removeBtn.click();
 composeBtn.click();
+
+
+
+
+
+
 
 
 // Other interaction listeners

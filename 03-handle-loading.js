@@ -1,3 +1,5 @@
+browser.get("http://minium.vilt.io/sample-app/");
+
 // elements
 headers = $("th");
 cells = $("td");
