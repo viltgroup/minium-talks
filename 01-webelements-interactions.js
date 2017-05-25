@@ -8,9 +8,15 @@ var subjectFld = $("input").withLabel("Subject");
 
 // interactions
 sentNavItem.click();
-composeBtn.click();
+
+//composeBtn.click();
+
+// timeout because field is not visible in UI yet
 recipientsFld.select("Rui Figueira");
 subjectFld.fill("Hello World!");
+
+
+
 
 // other jquery methods
 
