@@ -9,7 +9,7 @@ recipientCells = cells.below(recipientsHeader);
 myCell = recipientCells.withText("Rui Figueira");
 myCheckbox = checkboxes.leftOf(myCell);
 
-loading = $("loading").withCss("display", "block");
+loading = $(".loading").withCss("display", "block");
 deleteBtn = $("#remove-action");
 composeBtn = $("#compose");
 
