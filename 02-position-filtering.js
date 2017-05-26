@@ -1,5 +1,8 @@
 browser.get("http://minium.vilt.io/sample-app");
 
+// ensure window is maximized
+browser.configure().window().maximize();
+
 headers;
 cells;
 checkboxes;
